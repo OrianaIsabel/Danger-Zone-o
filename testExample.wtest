@@ -1,9 +1,17 @@
-import example.pepita
+import example.*
 
-describe "group of tests for pepita" {
+describe "grupo de tests para los empleados" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "Aunque Pam posee las habilidades requeridas, no se cumple porque esta incapacitada" {
+    assert.that(!(pam.poseeHabilidades([leer, dibujar])))
+  }
+  
+  test "Michael puede usar las habilidades disparar porque su subordinado es Dwigth, quien puede usarla" {
+    assert.that(michael.puedeUsar(disparar))
+  }
+
+  test "El equipo conformado por Michael, Jim y Pam puede cumplir la mision La Oficina" {
+    assert.that(laOficina.puedeCumplir(equipo1))
   }
 
 }
